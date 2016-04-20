@@ -11,8 +11,8 @@
   <body>
     put some text in:<br>
     <form action="mysql.php" method="post">
-      <input type="text" name="name"><br>
-      <input type="text" name="request"><br>
+      username: <input type="text" name="name"><br>
+      site id: <input type="text" name="request"><br>
       <input type="submit">
     </form>
     <?php
