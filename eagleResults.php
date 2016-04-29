@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Submissions</title>
+  </head>
+  <body>
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "eagleSheet";
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    
+    $sql = "SELECT * FROM signInOut";
+    $result = $conn->query($sql);
+
+   if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+          echo "<b> id: </b>" . $row["ID"] . " - <b> Name: </b>" . $row["NAME"] . " - <b> Timestamp: </b>" . $row["TIMESTAMP"] . " - <b> Item: </b>" . $row["ITEM"] . " - <b> Purpose: </b>" . $row["PURPOSE"] . " - <b> Return Date: </b>" . $row["RETURN_DATE"] . " - <b> Taking or Returning? </b>" . $row["IN_OR_OUT"] . "<br>";
+      }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+    ?>
+    
+    
+  </body>
+</html>

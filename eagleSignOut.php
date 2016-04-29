@@ -15,15 +15,15 @@
       input {
         display: table-cell;
         margin: 5px;
-        margin-top: auto;
-        margin-bottom: 5px;
-        margin-left: 25px;
         height: 40px;
-        vertical-align:top;
+        margin-left: 25px;
+        margin-top: auto;
         font-size: 25px;
       }
       input.radio{
-        transform:scale(2);
+        transform:scale(1.5);
+        margin-left: -75px;
+        display: initial;
       }
       h1 {
         margin-bottom: 9px;
@@ -33,31 +33,41 @@
   </head>
   <body>
     <h1>
-      Pelican Case Item Sign In and Out
+      Team 93 Media Equipment Checkout Slip
     </h1>
+    <h2>
+      Honestly I think the main problem with this system is how many things need to be filled out
+    </h2>
     <div class="container">
     <form action="eagleSignOutSQL.php" method="post">
       <p>
-        <label>Student ID:</label>
+        <label>Name:</label>
         <input autocomplete="off" type="text" name="id">
       </p>
       <p>
-        <label>Time (hh:mm):</label>
-        <input autocomplete="off" type="text" name="time">
-      </p>
-      <p>
-        <label>Item thing:</label>      
+        <label>Piece of Equipment:</label>      
         <input type="text" name="item">
       </p>
       <p>
+        <label>Purpose:</label>
+        <input type="text" name="purpose">
+      </p>
+      <p>
+        <label>Expected Return Date:</label>
+        <input type="text" name="returned">
+      </p>
+      <p>
         <label>Taking</label>
-        <input type="radio" name="in_or_out" value="out" class="radio">
+        <input type="radio" name="in_or_out" value="Taking" class="radio">
       </p>
       <p>
         <label>Returning</label>
-        <input type="radio" name="in_or_out" value="in" class="radio">
+        <input type="radio" name="in_or_out" value="Returning" class="radio">
       </p>
-      <input type="submit">
+      <br>
+      <p>
+        <input type="submit">
+      </p>
     </form>
     </div>
   </body>
