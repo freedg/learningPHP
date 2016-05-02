@@ -7,7 +7,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "eagleSheet";
+    $dbname = "pelicanSheet";
     
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -21,9 +21,29 @@
 
    if ($result->num_rows > 0) {
       // output data of each row
+      echo "<table border='1' style='width:100%'>         
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Timestamp</th>
+                <th>Item</th>
+                <th>Purpose</th>
+                <th>Return Date</th>
+                <th>Taking or Returning</th>
+              </tr>";
       while($row = $result->fetch_assoc()) {
-          echo "<b> id: </b>" . $row["ID"] . " - <b> Name: </b>" . $row["NAME"] . " - <b> Timestamp: </b>" . $row["TIMESTAMP"] . " - <b> Item: </b>" . $row["ITEM"] . " - <b> Purpose: </b>" . $row["PURPOSE"] . " - <b> Return Date: </b>" . $row["RETURN_DATE"] . " - <b> Taking or Returning? </b>" . $row["IN_OR_OUT"] . "<br>";
+        echo "
+          <tr>
+            <td>". $row["ID"] ."</td>
+            <td>". $row["NAME"] ."</td>
+            <td>". $row["TIMESTAMP"] ."</td>
+            <td>". $row["ITEM"] ."</td>
+            <td>". $row["PURPOSE"] ."</td>
+            <td>". $row["RETURN_DATE"] ."</td>
+            <td>". $row["IN_OR_OUT"] ."</td>
+          </tr>";
       }
+     echo "</table>";
     } else {
         echo "0 results";
     }

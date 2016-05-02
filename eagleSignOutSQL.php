@@ -2,8 +2,8 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "eagleSheet";
-$id = $_POST["id"]; #$id = 1000485122
+$dbname = "pelicanSheet";
+$id = $_POST["id"];
 $item = $_POST["item"];
 $in_or_out = $_POST["in_or_out"];
 $purpose = $_POST["purpose"];
@@ -27,7 +27,7 @@ $sql = "INSERT INTO signInOut (NAME, ITEM, PURPOSE, RETURN_DATE, IN_OR_OUT)
 VALUES ('$id', '$item', '$purpose', '$returned', '$in_or_out')";
 
 if ($conn->query($sql) === TRUE) {
-  header("Location: http://preview.1lqgijkopnrn3ik91w5o5k1k0bgwrk9u7wd8qjk6dbcsor.box.codeanywhere.com/eagleSignOut.php");
+  header("Location: http://preview.k61ljxwyspz4zpvit70qm8a671oflxrqq62i4vxfyknvcxr.box.codeanywhere.com/eagleSignOut.php");
   die();
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;

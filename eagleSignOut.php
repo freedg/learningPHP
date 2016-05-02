@@ -33,10 +33,12 @@
   </head>
   <body>
     <h1>
-      Team 93 Media Equipment Checkout Slip
+      Team 93 Media Equipment Checkout
     </h1>
     <h2>
       Honestly I think the main problem with this system is how many things need to be filled out
+      <br>
+      Like is the return date even neccessary? I can't think of a time when someone would have something out for more than a day.
     </h2>
     <div class="container">
     <form action="eagleSignOutSQL.php" method="post">
