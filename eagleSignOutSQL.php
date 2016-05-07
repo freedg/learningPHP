@@ -23,8 +23,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$sql = "INSERT INTO signInOut (NAME, ITEM, PURPOSE, RETURN_DATE, IN_OR_OUT)
-VALUES ('$id', '$item', '$purpose', '$returned', '$in_or_out')";
+$sql = "INSERT INTO signInOut (NAME, ITEM, PURPOSE, IN_OR_OUT)
+VALUES ('$id', '$item', '$purpose', '$in_or_out')";
 
 if ($conn->query($sql) === TRUE) {
   header("Location: http://preview.k61ljxwyspz4zpvit70qm8a671oflxrqq62i4vxfyknvcxr.box.codeanywhere.com/eagleSignOut.php");

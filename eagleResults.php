@@ -1,8 +1,20 @@
 <html>
   <head>
     <title>Submissions</title>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+    }
+    </style>
   </head>
   <body>
+    <h1>
+      Pelican Check Out
+    </h1>
     <?php
     $servername = "localhost";
     $username = "root";
@@ -28,7 +40,6 @@
                 <th>Timestamp</th>
                 <th>Item</th>
                 <th>Purpose</th>
-                <th>Return Date</th>
                 <th>Taking or Returning</th>
               </tr>";
       while($row = $result->fetch_assoc()) {
@@ -39,13 +50,12 @@
             <td>". $row["TIMESTAMP"] ."</td>
             <td>". $row["ITEM"] ."</td>
             <td>". $row["PURPOSE"] ."</td>
-            <td>". $row["RETURN_DATE"] ."</td>
             <td>". $row["IN_OR_OUT"] ."</td>
           </tr>";
       }
      echo "</table>";
     } else {
-        echo "0 results";
+        echo "<h2>0 results</h2>";
     }
     $conn->close();
     ?>
